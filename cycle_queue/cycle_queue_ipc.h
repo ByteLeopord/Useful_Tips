@@ -14,4 +14,15 @@ struct cycle_queue_t
     bool is_full;
 };
 
+cbuf_handle_t cycle_buf_init(uint8_t *buffer, size_t size);
+void cycle_buf_free(cbuf_handle_t cbuf);
+void cycle_buf_reset(cbuf_handle_t cbuf);
+void cycle_buf_put(cbuf_handle_t cbuf, uint8_t data);
+int cycle_buf_put2(cbuf_handle_t cbuf, uint8_t data);
+int cycle_buf_get(cbuf_handle_t cbuf, uint8_t *data);
+bool cycle_buf_empty(cbuf_handle_t cbuf);
+bool cycle_buf_full(cbuf_handle_t cbuf);
+size_t cycle_buf_capacity(cbuf_handle_t cbuf);
+size_t cycle_buf_size(cbuf_handle_t cbuf);
+
 #endif
